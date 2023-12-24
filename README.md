@@ -156,7 +156,7 @@
       "availableQuantity": 10,
       "shelfLocation": "A-1"
     }
-    // ... other books
+    # ... other books
   ]
   ```
 
@@ -175,13 +175,13 @@
       "availableQuantity": 10,
       "shelfLocation": "A-1"
     }
-    // ... other matching books
+    # ... other matching books
   ]
   ```
 
-  ## Borrowing
+## Borrowing
 
-  ### 1. Book Checkout
+### 1. Book Checkout
 
 - **Endpoint:** `POST /borrowing/checkout`
 - **Input:**
@@ -201,7 +201,7 @@
   }
   ```
 
-  ### 2. Book return
+### 2. Book return
 
 - **Endpoint:** `POST /borrowing/return`
 - **Input:**
@@ -221,7 +221,7 @@
   }
   ```
 
-  ### 3. Borrowed Books
+### 3. Borrowed Books
 
 - **Endpoint:** `GET /borrowing/borrowers/:id/books`
 
@@ -235,11 +235,11 @@
       "ISBN": "1234567890",
       "dueDate": "2023-12-30 10:00:00.00"
     }
-    // ... other checked-out books
+    # ... other checked-out books
   ]
   ```
 
-  ### 4. Book Overdue
+### 4. Book Overdue
 
 - **Endpoint:** `POST /borrowing/overdue`
 
@@ -253,7 +253,7 @@
       "ISBN": "0987654321",
       "dueDate": "2023-12-23 10:00:00"
     }
-    // ... other overdue books
+    # ... other overdue books
   ]
   ```
 
@@ -271,7 +271,7 @@
   - Book Title
   - Borrowing Date
 
-  ### 2. Borrowing Process Last Month
+### 2. Borrowing Process Last Month
 
 - **Endpoint:** `GET /reports/borrowing-process-last-month/`
 - **Output:**
@@ -282,7 +282,7 @@
   - Book Title
   - Borrowing Date
 
-  ### 3. Overdue Last Month
+### 3. Overdue Last Month
 
 - **Endpoint:** `GET /reports/overdue-last-month/`
 - **Output:**
