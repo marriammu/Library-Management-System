@@ -33,7 +33,7 @@ exports.updateBook = (req, res) => {
     (error) => {
       if (error) {
         console.error("Error updating book:", error);
-        res.status(res.statusCode).json({ error: "Internal Server Error" });
+        res.status(res.statusCode).json({ error: "Error updating book" });
       } else {
         res.status(res.statusCode).json({ message: "Book updated successfully" });
       }
@@ -46,7 +46,7 @@ exports.deleteBook = (req, res) => {
   booksdb.query(query, [bookId], (error) => {
     if (error) {
       console.error("Error deleting book:", error);
-      res.status(res.statusCode).json({ error: "Internal Server Error" });
+      res.status(res.statusCode).json({ error: "Error deleting book" });
     } else {
       res.status(res.statusCode).json({ message: "Book deleted successfully" });
     }
@@ -57,7 +57,7 @@ exports.getAllBooks = (req, res) => {
   booksdb.query(query, (error, results) => {
     if (error) {
       console.error("Error fetching books:", error);
-      res.status(res.statusCode).json({ error: "Internal Server Error" });
+      res.status(res.statusCode).json({ error: "Error fetching books" });
     } else {
       res.status(res.statusCode).json(results);
     }
@@ -76,7 +76,7 @@ exports.searchBook = (req, res) => {
     (error, results) => {
       if (error) {
         console.error("Error searching for book:", error);
-        res.status(res.statusCode).json({ error: "Internal Server Error" });
+        res.status(res.statusCode).json({ error: "Error searching for book" });
       } else {
         res.status(res.statusCode).json(results);
       }
