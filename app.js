@@ -7,14 +7,12 @@ const borrowersRouter = require("./routes/borrowerRoutes");
 const borrowingRouter = require("./routes/borrowingRoutes");
 const reportsRouter = require("./routes/reportsRoutes");
 
-
 const app = express();
 
-
 const limiter = rateLimit({
-  windowMs: 60 * 60 * 1000, 
-  max: 10000, 
-  message: 'Too many requests from this IP, please try again in an hour'
+  windowMs: 60 * 60 * 1000,
+  max: 10000,
+  message: "Too many requests from this IP, please try again in an hour",
 });
 
 app.use("/borrowing/checkout", limiter);

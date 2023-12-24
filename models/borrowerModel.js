@@ -13,17 +13,13 @@ const createDatabaseQuery = `CREATE DATABASE IF NOT EXISTS libsystem`;
 
 connection.query(createDatabaseQuery, (err) => {
   if (err) {
-    console.error("Error creating database:", err);
     throw err;
-  } else {
-    console.log("Database created successfully");
-  }
+  } 
 
   connection.end();
 });
 
 dbConfig.database = "libsystem";
-console.log(dbConfig);
 
 const databaseconnection = mysql.createConnection(dbConfig);
 const createBorrowersTableQuery = `
@@ -37,7 +33,6 @@ const createBorrowersTableQuery = `
 `;
 databaseconnection.query(createBorrowersTableQuery, (err) => {
   if (err) {
-    console.error("Error creating borrowers table:", err);
     throw err;
   }
 });

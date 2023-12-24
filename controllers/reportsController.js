@@ -21,7 +21,6 @@ exports.getBorrowingProcessReport = (req, res) => {
     [startDate, endDate],
     (error, results) => {
       if (error) {
-        console.error("Error fetching borrowing process data:", error);
         return res
           .status(res.statusCode)
           .json({ error: "Error fetching borrowing process data" });
@@ -46,7 +45,6 @@ exports.getBorrowingProcessReport = (req, res) => {
           res.download("BorrowingProcessReport.xlsx");
         })
         .catch((error) => {
-          console.error("Error exporting Excel:", error);
           res.status(res.statusCode).json({ error: "Error exporting Excel" });
         });
     }
@@ -65,7 +63,6 @@ exports.getBorrowingProcessLastMonth = (req, res) => {
 
   borrowingdb.query(selectBorrowingDataQuery, (error, results) => {
     if (error) {
-      console.error("Error fetching borrowing process data:", error);
       return res
         .status(res.statusCode)
         .json({ error: "Error fetching borrowing process data" });
@@ -90,7 +87,6 @@ exports.getBorrowingProcessLastMonth = (req, res) => {
         res.download("BorrowingProcessLastMonth.xlsx");
       })
       .catch((error) => {
-        console.error("Error exporting Excel:", error);
         res.status(res.statusCode).json({ error: "Error exporting Excel" });
       });
   });
@@ -109,7 +105,6 @@ exports.getOverdueLastMonth = (req, res) => {
 
   borrowingdb.query(selectOverdueDataQuery, (error, results) => {
     if (error) {
-      console.error("Error fetching borrowing process data:", error);
       return res
         .status(res.statusCode)
         .json({ error: "Error fetching borrowing process data" });
@@ -134,7 +129,6 @@ exports.getOverdueLastMonth = (req, res) => {
         res.download("OverdueLastMonth.xlsx");
       })
       .catch((error) => {
-        console.error("Error exporting Excel:", error);
         res.status(res.statusCode).json({ error: "Error exporting Excel" });
       });
   });

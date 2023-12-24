@@ -30,7 +30,9 @@ exports.updateBook = (req, res) => {
       if (error) {
         res.status(res.statusCode).json({ error: "Error updating book" });
       } else {
-        res.status(res.statusCode).json({ message: "Book updated successfully" });
+        res
+          .status(res.statusCode)
+          .json({ message: "Book updated successfully" });
       }
     }
   );
