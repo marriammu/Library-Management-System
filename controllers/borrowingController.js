@@ -1,5 +1,6 @@
 const borrowingdb = require("../models/borrowingModel");
 const booksdb = require("../models/bookModel");
+const borrowerbd = require("../models/borrowerModel");
 
 exports.bookCheckout = (req, res) => {
   console.log("bookCheckout");
@@ -62,34 +63,42 @@ exports.bookCheckout = (req, res) => {
 exports.bookReturn = (req, res) => {
   console.log("bookReturn");
   const { borrowerId, bookId } = req.body;
+
   if (!Number.isInteger(borrowerId) || !Number.isInteger(bookId)) {
     return res.status(res.statusCode).json({ error: "Invalid input format" });
   }
 
-  const updateBookQuery =
-    "UPDATE books SET availableQuantity = availableQuantity + 1 WHERE id=?";
-  booksdb.query(updateBookQuery, [bookId], (error) => {
+  const checkBorrowingQuery = "SELECT * FROM borrowings WHERE borrowerId=? AND bookId=? AND returnDate IS NULL";
+
+  borrowingdb.query(checkBorrowingQuery, [borrowerId, bookId], (error, results) => {
     if (error) {
-      console.error("Error updating book availability:", error);
-      res
-        .status(res.statusCode)
-        .json({ error: "Error updating book availability" });
-    } else {
+      console.error("Error checking borrowing information:", error);
+      return res.status(res.statusCode).json({ error: "Error checking borrowing information" });
+    }
+
+    if (results.length === 0) {
+      return res.status(res.statusCode).json({ error: "No active borrowing record found" });
+    }
+
+    const updateBookQuery =
+      "UPDATE books SET availableQuantity = availableQuantity + 1 WHERE id=?";
+    booksdb.query(updateBookQuery, [bookId], (error) => {
+      if (error) {
+        console.error("Error updating book availability:", error);
+        return res.status(res.statusCode).json({ error: "Internal Server Error" });
+      }
+
       const recordReturnQuery =
         "UPDATE borrowings SET returnDate = NOW() WHERE borrowerId=? AND bookId=? AND returnDate IS NULL";
       borrowingdb.query(recordReturnQuery, [borrowerId, bookId], (error) => {
         if (error) {
           console.error("Error recording return information:", error);
-          res
-            .status(res.statusCode)
-            .json({ error: "Error recording return information" });
-        } else {
-          res
-            .status(res.statusCode)
-            .json({ message: "Book returned successfully" });
+          return res.status(res.statusCode).json({ error: "Internal Server Error" });
         }
+
+        res.status(res.statusCode).json({ message: "Book returned successfully" });
       });
-    }
+    });
   });
 };
 
