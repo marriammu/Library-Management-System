@@ -79,7 +79,7 @@
       "email": "borrower.email@example.com",
       "registeredDate": "2023-12-24 10:00:00 PM"
     }
-    // ... other borrowers
+    # ... other borrowers
   ]
   ```
 
