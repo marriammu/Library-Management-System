@@ -79,9 +79,7 @@
       "email": "borrower.email@example.com",
       "registeredDate": "2023-12-24 10:00:00 PM"
     }
-    ``````
     # ... other borrowers
-    ``````
   ]
   ```
 
@@ -158,9 +156,7 @@
       "availableQuantity": 10,
       "shelfLocation": "A-1"
     }
-    ``````
     # ... other books
-    ``````
   ]
   ```
 
@@ -179,9 +175,7 @@
       "availableQuantity": 10,
       "shelfLocation": "A-1"
     }
-    ``````
     # ... other matching books
-    ``````
   ]
   ```
 
@@ -241,9 +235,7 @@
       "ISBN": "1234567890",
       "dueDate": "2023-12-30 10:00:00.00"
     }
-    ``````
     # ... other checked-out books
-    ``````
   ]
   ```
 
@@ -261,9 +253,7 @@
       "ISBN": "0987654321",
       "dueDate": "2023-12-23 10:00:00"
     }
-    ``````
-   # ...other overdue books
-    ``````
+    # ...other overdue books
   ]
   ```
 
