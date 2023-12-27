@@ -146,7 +146,7 @@
 - **Endpoint:** `GET /books`
 - **Output:**
 
-  ```json
+  ```jsonc
   [
     {
       "id": 1,
