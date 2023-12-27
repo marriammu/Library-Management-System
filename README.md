@@ -70,7 +70,7 @@
 
 - **Endpoint:** `GET /borrowers`
 - **Output:**
-  ```json
+  ```jsonc
   [
     {
       "id": 1,
@@ -165,7 +165,7 @@
 - **Endpoint:** `GET /books/search?title=&author=&ISBN=`
 - **Output:**
 
-  ```json
+  ```jsonc
   [
     {
       "id": 1,
@@ -227,7 +227,7 @@
 
 - **Output:**
 
-  ```json
+  ```jsonc
   [
     {
       "title": "Book Title",
@@ -245,7 +245,7 @@
 
 - **Output:**
 
-  ```json
+  ```jsonc
   [
     {
       "title": "Overdue Book Title",
