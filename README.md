@@ -70,7 +70,7 @@
 
 - **Endpoint:** `GET /borrowers`
 - **Output:**
-  ```jsonc
+  ```yaml
   [
     {
       "id": 1,
@@ -81,7 +81,7 @@
     }
     # ... other borrowers
   ]
-  ```
+
 
 ## Books
 
@@ -146,7 +146,7 @@
 - **Endpoint:** `GET /books`
 - **Output:**
 
-  ```jsonc
+  ```yaml
   [
     {
       "id": 1,
@@ -158,14 +158,14 @@
     }
     # ... other books
   ]
-  ```
+
 
 ### 5. Search for Books
 
 - **Endpoint:** `GET /books/search?title=&author=&ISBN=`
 - **Output:**
 
-  ```jsonc
+  ```yaml
   [
     {
       "id": 1,
@@ -177,7 +177,7 @@
     }
     # ... other matching books
   ]
-  ```
+ 
 
 ## Borrowing
 
@@ -227,7 +227,7 @@
 
 - **Output:**
 
-  ```jsonc
+  ```yaml
   [
     {
       "title": "Book Title",
@@ -237,7 +237,7 @@
     }
     # ... other checked-out books
   ]
-  ```
+ 
 
 ### 4. Book Overdue
 
@@ -245,7 +245,7 @@
 
 - **Output:**
 
-  ```jsonc
+  ```yaml
   [
     {
       "title": "Overdue Book Title",
@@ -255,7 +255,7 @@
     }
     # ...other overdue books
   ]
-  ```
+  
 
 ## Reports
 
