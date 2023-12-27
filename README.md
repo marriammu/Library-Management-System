@@ -70,7 +70,7 @@
 
 - **Endpoint:** `GET /borrowers`
 - **Output:**
-  ```jsonc
+  ```yaml
   [
     {
       "id": 1,
@@ -81,7 +81,6 @@
     }
     # ... other borrowers
   ]
-  ```
 
 ## Books
 
