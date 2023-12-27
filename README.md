@@ -71,6 +71,7 @@
 - **Endpoint:** `GET /borrowers`
 - **Output:**
   ```yaml
+  ```yaml
   [
     {
       "id": 1,
@@ -147,6 +148,7 @@
 - **Output:**
 
   ```yaml
+  ```yaml
   [
     {
       "id": 1,
@@ -160,11 +162,13 @@
   ]
 
 
+
 ### 5. Search for Books
 
 - **Endpoint:** `GET /books/search?title=&author=&ISBN=`
 - **Output:**
 
+  ```yaml
   ```yaml
   [
     {
@@ -228,6 +232,7 @@
 - **Output:**
 
   ```yaml
+  ```yaml
   [
     {
       "title": "Book Title",
@@ -246,6 +251,7 @@
 - **Output:**
 
   ```yaml
+  ```yaml
   [
     {
       "title": "Overdue Book Title",
@@ -255,6 +261,7 @@
     }
     # ...other overdue books
   ]
+  
   
 
 ## Reports
